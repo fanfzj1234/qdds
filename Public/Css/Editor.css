@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+#control-group,td,button,input {font-family:细明体;font-size:12px;} 
+div {border:1px solid #d9cec4;borderColor:#ffffff;background:#d9cec4;width:24px;height:20px;text-align:center;cursor:default;} 
+.function {width:80px;} 
+
+

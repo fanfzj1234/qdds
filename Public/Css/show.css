@@ -1,0 +1,39 @@
+/* CSS Document */
+
+
+
+
+
+/*info_main start*/		
+#info_main{
+	margin-top:20px;
+	min-height:300px;
+	border:1px solid #0CF;
+	border-radius:10px;
+	}
+#info_main #header{
+	text-align:center;
+	}	
+#info_main #info_content{
+	width:80%;
+	margin:0 auto;
+	}	
+	
+#info_main #footer{
+	margin-left:80%;
+	}
+/*info_main start*/
+
+
+/*info_list_main start*/		
+#info_list_main{
+	min-height:300px;
+	margin-top:20px;
+	}	
+#info_list_main ul li{
+	list-style:none;
+	}	
+#info_list_main ul li span{
+	float:right;
+	}	
+/*info_list_main end*/
