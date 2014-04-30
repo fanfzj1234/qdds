@@ -1,0 +1,30 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+  <a href="__APP__">首页</a>>>社团活动召集列表
+  <div id="info_list_main">
+   <?php
+     $count = count($cy_projects);
+     if($count){
+     ?>
+    <ul>
+      <foreach name="cy_projects" item="cy_project"> 
+      <li><a href="__APP__/Show/show_cy_project?Id={$cy_project.Id}">{$cy_project.theme}</a>  
+      <span>{$cy_project.datetime}</span>
+      </li>
+     <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="100%" color=#987cb9 SIZE=3>
+      </foreach>
+    </ul>
+     <?php
+     } else{
+       echo "没有找到相关内容";
+      }
+     ?>
+  </div>
+</div>
+
+
+
+<include file="Public:footer" />

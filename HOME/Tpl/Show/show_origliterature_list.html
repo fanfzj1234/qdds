@@ -1,0 +1,19 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+   <a href="__APP__">首页</a>>>原创文学
+  <div id="info_list_main">
+    <ul>
+      <foreach name="origliterature" item="origliterature"> 
+      <li><a href="__APP__/Show/show_origliterature?Id={$origliterature.Id}">{$origliterature.Title}</a>  
+      <span>{$origliterature.Time}</span>
+      </li>
+     <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" color=#987cb9 SIZE=3>
+      </foreach>
+    </ul>
+  </div>
+</div>
+
+<include file="Public:footer" />

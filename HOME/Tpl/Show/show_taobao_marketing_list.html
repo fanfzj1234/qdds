@@ -1,0 +1,30 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+  <a href="__APP__">首页</a>>>社团活动召集列表
+  <div id="info_list_main">
+   <?php
+     $count = count($taobao_marketings);
+     if($count){
+     ?>
+    <ul>
+      <foreach name="taobao_marketings" item="taobao_marketing"> 
+      <li><a href="__APP__/Show/show_taobao_marketing?Id={$taobao_marketing.Id}">{$taobao_marketing.theme}</a>  
+      <span>{$taobao_marketing.fb_time}</span>
+      </li>
+     <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="100%" color=#987cb9 SIZE=3>
+      </foreach>
+    </ul>
+     <?php
+     } else{
+       echo "没有找到相关内容";
+      }
+     ?>
+  </div>
+</div>
+
+
+
+<include file="Public:footer" />
