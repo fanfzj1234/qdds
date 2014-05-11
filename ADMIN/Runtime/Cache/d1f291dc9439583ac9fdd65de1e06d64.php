@@ -1,12 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?>
 <link href="__CSS__/admin_member.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__JS__/jquery.js"></script>
-
+<script type="text/javascript" src="__JS__/admin_member.js"></script>
 <script>
 $(document).ready(function()
 {
-	$("#bc_information").click(function(){
-		$("#main").load("__APP__/News/cyszx");
+	$("#member_look").click(function(){
+		$("#main").load("__APP__/Member/member_ck");
 	});
 	$("#club_activity").click(function(){
 		$("#main").load("__APP__/Activity/sthd");
@@ -33,43 +33,40 @@ $(document).ready(function()
      <td  align="center" class="admin_list_tit">上次登录ip</td>
      <td  align="center" width="5%" class="admin_list_tit" >操作</td>
     </tr>
-    <?php if(is_array($list)): foreach($list as $key=>$list): ?><tr>
-           <td align="center" ><?php echo ($list["id"]); ?></td>
+  
+	<div id="content_left" class="span6">
+     <?php if(is_array($list)): foreach($list as $key=>$list): ?><tr>
+          <td align="center" ><?php echo ($list["id"]); ?></td>
           <td align="center" ><?php echo ($list["username"]); ?></td>
           <td align="center" ><?php echo ($list["email"]); ?></td>
           <td align="center" ><?php echo ($list["phone"]); ?></td>
           <td align="center" ><?php echo ($list["register_time"]); ?></td>
           <td align="center" ><?php echo ($list["login_time"]); ?></td>
-          <td align="center" ><?php echo ($list["loginip"]); ?></td>
-          <td align="center" ><a href="main_user_look.php?Id=<?php echo $rs['Id'];?>"><strong style="color:#006">查看</strong></a></td>
-      </tr><?php endforeach; endif; ?>
+          <td align="center" ><?php echo ($list["login_ip"]); ?></td>
+          <td align="center" ><a id="member_look"><strong style="color:#006">查看</strong></a></td>
+      </tr><?php endforeach; endif; ?> 
+    </div>
      </table>
     </div>  
       <div class="clear"></div>
       <div class="clear"></div>
-	<table width="95%" border="0" cellspacing="10" cellpadding="0" class="admin_list_btm">
+	<table width="100%" border="0" cellspacing="10" cellpadding="0" class="admin_list_btm">
       <tr>
         <td>
     
         <div class="page link_bk" style="margin-right:30px;" align="center">
-   <span class="grayborder" style="background-color:#f6f6f6f6;"><?php echo ($page); ?></span>
+         <div id="last_page">
+         <a id="prev">&larr; Last</a>
+         </div>
+         <div id="next_page">
+          <a  id="next">Next &rarr;</a>
+         </div>
+          <div id="page_page">
+        <a><span id="page_id">1</span></a>
+        <input type="hidden" id="page_count" value="<?php echo ($count/16); ?>">
+        </div>
     </div>
-    
 		</td>
-        <td align="right">
-        <div class="page link_bk" >
-		<form id="formseh" name="formseh" method="post" action="__APP/Member/member_cz">	
-                <input type="text" name="sumbit" />
-                <select name="list">
-                <option value="Id">UID</option>
-                <option value="e_mail">E-mail</option>
-                <option value="phone">手机</option>
-                <option value="IP">IP</option>
-                </select>
-				<input type="submit" name="sbt" class="sbt" id="sbt" value="搜索"/>
-		  </form>
-          </div>
-	    </td>
       </tr></table>
   <div class="clear"></div>
    </div>

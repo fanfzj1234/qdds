@@ -1,20 +1,6 @@
-
+<head>
 <link href="__CSS__/admin_member.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="__JS__/Editor.js"></script>
-<script type="text/javascript" src="__JS__/jquery.js"></script>
-<script>
-
-$(document).ready(function()
-{
-	$("#bc_information").click(function(){
-		$("#main").load("__APP__/News/cyszx");
-	});
-	$("#club_activity").click(function(){
-		$("#main").load("__APP__/Activity/sthd");
-	});		
-});
-</script> 
-
+<script  type="text/javascript" src="__JS__/zhuce_xy.js"></script>
 </head>
 
 <body style="background-color:#E0F0FE">
@@ -26,12 +12,19 @@ $(document).ready(function()
 </div> 
  <div class="clear"></div>
 <br>
+ <div id="add_gl">
+<form class="form-horizontal" method="post" action="__APP__/Member/zhuce_xy_cl">
 <div class="control-group">
-<form name="zcxy" method="post" action="__APP__/Member/zhuce_xy_cl">
-<textarea id='sendcontent' style='display:none' placeholder="请输入内容" name="zcxy_text"></textarea>
-<iframe name='editor' src='__Edit__/edit.html?V=sendcontent&T=2&A=1' frameBorder='0' marginHeight='0' marginWidth='0' scrolling='no' style='height:250px;width:640px'></iframe>
-<br>
-<input type="button" value="提交" onclick="Sendnow()">
-</form>
+      <label for="user_info_fbzhuce_content" class="control-label"></label>
+     <div class="controls">
+      <textarea rows="30" cols="50" id="user_info_fbzhuce_content" name="user_info_fbzhuce_content" placeholder="请在这里"> {$zhuce_arr} </textarea>
+      </div>
+  </div>
+  <div id="user_info_add_gl_warning" class="control-group"></div>
+  <div class="form-actions" id="sub_reset_gl_div">
+    <button class="btn btn-primary" type="button" id="zhuce_sub_btn">提交</button>
+    <button class="btn btn-primary" type="reset" id="zhuce_reset_btn">重置</button>
+  </div>
+  </form>   
 </div>
 </div>

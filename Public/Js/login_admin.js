@@ -62,7 +62,7 @@ $(document).ready(function()
 			$.post(APP+"/Login/do_login",{username:username,pwd:pwd,superpwd:superpwd},    function(data){	
 			          	 
 					 var s=data.substr(1,2);
-					 var a=s.substring(1,2);
+					 var a=s.substring(0,1);
 					 //alert("a长度："+a.length);
 				    if(a=='1'){
 						$("#login_warning").text("用户名或密码错误");
@@ -71,7 +71,7 @@ $(document).ready(function()
 						window.location.href=APP+'/Index/index';
 						}
 				    else{
-						//alert(a);
+						alert(a);
 						$("#login_warning").text("未知错误！");
 						//window.location.href=APP+'/Index/index';
 						}		

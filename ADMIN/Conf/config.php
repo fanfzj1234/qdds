@@ -41,7 +41,7 @@ return array(
              '__CSS__'=>'/qdds/Public/Css',
              '__JS__'=>'/qdds/Public/Js',
 	         '__IMG__'=>'/qdds/Public/images',
-             '__Edit__'=>'/qdds/Public/edit',
+             '__ckeditor__'=>'/qdds/Public/ckeditor',
 	      ),	
 );
 ?>

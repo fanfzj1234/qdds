@@ -1,8 +1,5 @@
 <?php
    class MemberAction extends CommonAction{
-	   public function index(){
-		     $this->show();   
-	   }
 	   public function member(){
 		   if(!$_SESSION['admin']&&(!(isset($_COOKIE['username']))))
              redirect('../Index/login',2,'页面跳转中...');
@@ -10,35 +7,32 @@
              $_SESSION['admin']=$_COOKIE['username'];
 
 		    $member = new Model("Member");                        //用户成员
-			import('ORG.Util.Page');// 导入分页类
-            $count=$member->count();// 查询满足要求的总记录数
-            $Page=new Page($count,25);// 实例化分页类 传入总记录数和每页显示的记录数
-            $show=$Page->show();// 分页显示输出
-// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-            $list = $member->order('register_time')->limit($Page->firstRow.','.$Page->listRows)->select();
+            $col=25;#每页显示记录条数
+            
+            $page=0;
+            // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+            $list = $member->order('register_time')->limit($page*$col,$col)->select();
             $this->assign('list',$list);// 赋值数据集
-			$this->assign('page',$show);// 赋值分页输出
-		    $this->display("index");
+            $count=$member->count();
+	        // 赋值分页输出
+			$this->assign("count",$count); 
+		    $this->display();  
 		   }
 		   
+	   //翻页
+		public function next_page(){
+		    $page_id=$_POST["page_id"];
 		   
-		   
-	    public function member_cz(){
-		$member = new Model("Member");                        //用户成员
-		$ss=$_POST['ss'];
-		$xz=$_POST['xz'];
-		//$map[$xz] =$ss;
-			import('ORG.Util.Page');// 导入分页类
-            $count=$member->where($xz.'='.$ss)->count();// 查询满足要求的总记录数
-            $Page=new Page($count,25);// 实例化分页类 传入总记录数和每页显示的记录数
-            $show=$Page->show();// 分页显示输出
-// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
-            $list = $member->order('register_time')->limit($Page->firstRow.','.$Page->listRows)->select();
-            $this->assign('list',$list);// 赋值数据集
-			$this->assign('page',$show);// 赋值分页输出
-		    $this->display("index");
-		
-		}
+		    $member = new Model("Member");     
+            $col=25;#每页显示记录条数
+            $page=$page_id;
+			$ms=$member->order('register_time')->limit($page*$col,$col)->select();
+			
+			$result=$ms;
+			
+			$this->ajaxReturn($result,"查询成功！",1);
+			}
+			
 		   
 	   public function zhuce_xy(){
 		   if(!$_SESSION['admin']&&(!(isset($_COOKIE['username']))))
@@ -46,11 +40,18 @@
              if(!$_SESSION['admin'])
              $_SESSION['admin']=$_COOKIE['username'];
             $this->display();
+			$Zxcy = new Model("Zxcy");
+			$zhuce_arr=$Zxcy->where('Id=1')->select();
+			$this->assign('zhuce_arr',$zhuce_arr['content']); 
 	    }
 		
 		public function zhuce_xy_cl(){
-		    $zcxy=$_POST['zcxy_text'];
-			echo $zcxy;
+		    $zhuce_xy=$_POST['zhuce_content'];
+			//echo $zhuce_xy;
+			$date['content']=$zhuce_xy;
+			$Zcxy = new Model("Zxcy");
+			$Zcxy->where('id=1')->setField($data);
+			echo '1';
 		}
 		
 		public function hylx()

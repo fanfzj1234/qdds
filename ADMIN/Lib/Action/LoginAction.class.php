@@ -18,7 +18,7 @@
 			    $ip= get_client_ip();
 				$date['login_time']=date('Y-m-d H:i:s',time());
 				$data['ip']=$ip;
-				$admin->where($condition)->save($data);
+				$admin->where($condition['user'])->save($data);
 				session_start();
 				$_SESSION['admin']=$user; 
 				echo '2';
