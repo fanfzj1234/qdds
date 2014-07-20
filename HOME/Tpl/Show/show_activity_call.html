@@ -1,0 +1,18 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+ <a href="__APP__">首页</a>>>网站制作
+<div id="info_main" class="wrapper col8">
+    <div id="header"><h2><?php echo $activity_call['theme']; ?></h2></div>
+    <div id="info_content">
+     <?php
+      echo $activity_call['content']
+      ?>
+    </div>
+    <div id="footer" style="margin-top:30px;"><div><?php echo $activity_call['datetime'] ?></div><div></div>
+</div>
+</div>
+
+<include file="Public:footer" />

@@ -1,0 +1,18 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+ <a href="__APP__">首页</a>>>电商活动展示
+<div id="info_main" class="wrapper col8">
+    <div id="header"><h2><?php echo $electric_activity['theme']; ?></h2></div>
+    <div id="info_content">
+     <?php
+      echo $electric_activity['content']
+      ?>
+    </div>
+    <div id="footer" style="margin-top:30px;"><div><?php echo $electric_activity['datetime'] ?></div><div></div>
+</div>
+</div>
+
+<include file="Public:footer" />

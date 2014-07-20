@@ -1,0 +1,40 @@
+<include file="Public:header" />
+<script src="__JS__/index_register.js" type="text/javascript"></script>
+<link rel="stylesheet" href="__CSS__/zhuce.css" type="text/css" />
+
+<body> 
+<!--   -->
+
+<div class="zhuce-info">
+    <form class="form-horizontal" method="post" name="myForm">
+	    <div class="control-group">
+            <label for="username" class="control-label">用户名</label>
+             <div class="controls">
+                <input type="text" name="register_username" id="register_username" placeholder="用户名"  />
+            </div>
+        </div>
+                          
+        <div class="control-group">
+            <label for="pwd" class="control-label">密码</label>
+            <div class="controls">
+                <input type="password" name="register_pwd" id="register_pwd" placeholder="密码" />
+            </div>
+        </div>
+                        
+        <div class="control-group">
+            <label for="pwd" class="control-label">重复密码</label>
+            <div class="controls">
+            <input type='password' name='repassword' id="repassword" placeholder="重复密码" /><br/>
+            </div>
+        </div>
+        <div class="control-group" style="margin-left:100px;">
+            <p id="login_warning" style="color:#F00;"></p>
+        </div>
+                           
+        <div class="modal-footer" >
+                    <button class="btn btn-inverse" type="reset">重置</button>
+                    <a class="btn btn-primary" type="button" id="tijiao">确定注册</a>
+        </div>
+    </form>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,30 @@
+<link href="__CSS__/admin_member.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__JS__/zhuce_xy.js"></script>
+<script type="text/javascript" src="__JS__/jquery.js"></script>
+</head>
+
+<body style="background-color:#E0F0FE">
+
+<div class="tab-container">
+ <div class="pagetit">
+ <div class="ptit">会员类型</div>
+  <div class="clear"></div>
+</div> 
+ <div class="clear"></div>
+ <table>
+<foreach name="list" item="list">
+       <tr>
+          <td align="center"  width="10%"  class="user_id">{$list.id}</td>
+          <td align="center"  width="10%"  class="user_id">{$list.remember_id}</td>
+          <td align="center"  width="10%"  class="user_username">{$list.username}</td>
+          <td align="center"  width="10%"  class="user_email">{$list.email}</td>
+          <td align="center"  width="10%"  class="user_phone">{$list.phone}</td>
+          <td align="center"  width="10%"  class="user_reguster_time">{$list.register_time}</td>
+          <td align="center"  width="10%"  class="user_login_time">{$list.login_time}</td>
+          <td align="center"  width="10%"  class="user_login_ip">{$list.login_ip}</td>
+          <td align="center"  width="10%"  class="user_login_time">{$list.qq}</td>
+          <td align="center"  width="10%"  class="user_login_time">{$list.type}</td>
+      </tr>
+     </foreach> 
+</table>
+</div>

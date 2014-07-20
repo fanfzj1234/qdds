@@ -103,11 +103,6 @@
   $conn=mysql_connect("localhost:3306","root","koala19920716");//建立与SQL Server数据库的连接
   mysql_query("set names 'utf8'"); 
   mysql_select_db("dzsw",$conn);   //选择数据库
-  if(!$conn)  
-  {  
-    die('FAIL!'.mysql_error());  
-  }  
-
   for($i=0;$i<30;++$i){
 	 $time="select * from sw_member where register_time=DATE_SUB(CURDATE(), INTERVAL '$i' DAY)";
      $value=mysql_num_rows(mysql_query($time));

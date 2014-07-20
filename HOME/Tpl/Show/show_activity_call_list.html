@@ -1,0 +1,28 @@
+<include file="Public:header" />
+
+
+<link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
+<div class="container">
+<a href="__APP__">首页</a>>>活动召集列表
+<div id="info_list_main">
+<?php
+   $count=count($activity_call);
+   if($count){
+   ?>
+    <ul>
+      <foreach name="activity_call" item="activity_call"> 
+      <li><a href="__APP__/Show/show_activity_call?Id={$activity_call.Id}">{$activity_call.theme}</a>  
+      <span>{$activity_call.datetime}</span>
+      </li>
+     <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" color=#987cb9 SIZE=3>
+      </foreach>
+    </ul>
+ <?php
+    }else{
+          echo"没有找到相关内容";
+    }
+    ?>
+  </div>
+</div>
+
+<include file="Public:footer" />
