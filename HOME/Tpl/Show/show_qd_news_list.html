@@ -3,8 +3,12 @@
 
 <link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
 <div class="container">
-   <a href="__APP__">首页</a>>>齐大新闻
-  <div id="info_list_main">
+<a href="__APP__">首页</a>>>齐大资讯
+<div id="info_list_main">
+   <?php
+   $count=count($qd_news);
+   if($count){
+   ?>
     <ul>
       <foreach name="qd_news" item="qd_news"> 
       <li><a href="__APP__/Show/show_qd_news?Id={$qd_news.Id}">{$qd_news.theme}</a>  
@@ -13,6 +17,11 @@
      <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" color=#987cb9 SIZE=3>
       </foreach>
     </ul>
+    <?php
+    }else{
+          echo"没有找到相关内容";
+    }
+    ?>
   </div>
 </div>
 

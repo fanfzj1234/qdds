@@ -1,6 +1,6 @@
 <?php
    class PublicAction extends CommonAction{
-	   public function verify(){
+	public function verify(){
 	      header('Content-type:text/html;charset=utf-8');
               import('ORG.Util.Image');
               Image::buildImageVerify($length=5, $mode=1, $type='png', $width=60, $height=26, $verifyName='verify');
@@ -15,7 +15,10 @@
     $height = 350; //高度
     $legend = array("aaaa","bbbb","cccc","dddd","eeee","ffff","gggg","hhhh");//说明
     $chart->createmonthline($title,$data,$size,$height,$width,$legend);
-
       }
+   public function Loading(){
+   	$this->display();  
+   }
+   
 }
 ?>

@@ -2,21 +2,20 @@
   
 
 	class IndexAction extends CommonAction {
-		
 		// 显示主页面
 		public function index(){
+			$tzye=C('TZYE');
 			if(!$_SESSION['admin']&&(!(isset($_COOKIE['username']))))
-             redirect('admin.php/Index/login',2,'页面跳转中...');
-             if(!$_SESSION['admin'])
+             redirect('admin.php/Index/login',14,$tzye);
+             if(!$_SESSION['admin']&&(isset($_COOKIE['username'])))
              $_SESSION['admin']=$_COOKIE['username'];
-			 $this->display();
+             $this->display();
 		}
-		
+		public function admin_index(){
+			$this->display();
+		}
 		public function main(){
-	        if(!$_SESSION['admin']&&(!(isset($_COOKIE['username']))))
-             redirect('../Index/login',2,'页面跳转中...');
-             if(!$_SESSION['admin'])
-             $_SESSION['admin']=$_COOKIE['username'];
+			
 		           
 			$member = new Model("Member");                        //用户成员
 			$bc_information= new Model("Bc_information");         //创业信息

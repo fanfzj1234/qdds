@@ -1,19 +1,42 @@
 @charset "utf-8";
 /* CSS Document */
-.main{
-   color:#000;
-  
+- 谷歌浏览器(Webkit): ::-webkit-input-placeholder pseudo-element;
+
+- IE10: :-ms-input-placeholder pseudo-class;
+
+- 火狐浏览器(Gecko18-): :-moz-placeholder pseudo-class;
+
+- 火狐浏览器(Gecko19+): ::-moz-placeholder pseudo-element;
+
+- Opera(Presto): 无。
+
+/* WebKit browsers */
+::-webkit-input-placeholder {
+	color: #777;
+}
+/* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
+	color: #777;
+	opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+::-moz-placeholder {
+	color: #777;
+	opacity: 1;
+}
+/* Internet Explorer 10+ */
+:-ms-input-placeholder {
+	color: #777;
 }
 body {  
   background: url("https://dl.dropboxusercontent.com/u/95690690/Web%20Design%20Public/pattern/ps_neutral.png");
   text-align: center;
 }
 #logo {
-	margin-left:5%;
   font-family:Audiowide;
-  font-size:200px;
+  font-size:150px;
+  margin-top: 20px;
   color: white;
-  margin:50px;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;

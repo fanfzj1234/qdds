@@ -1,10 +1,29 @@
-// JavaScript Document
+﻿// JavaScript Document
+function setCode(){
+                code = new Array();
+               var codeLength = 4;//验证码的长度
+               var checkCode = document.getElementById("checkCode");
+               checkCode.value="";
+
+               var selectChar = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z');
+
+               for(var i=0;i<codeLength;i++) {
+               var charIndex = Math.floor(Math.random()*32);
+               code +=selectChar[charIndex];
+               }
+               if(code.length != codeLength){
+               setCode();
+               }
+               checkCode.value=code;
+	}
 
 $(document).ready(function() {
-  
+	
+	
+	
 	/*登陆框的设置*/
 	$("#close_login_win").bind("click",function(){
-		   /*当取消登录时 将登陆框上的用户名和密码清楚*/
+		   /*当取消登录时 将登陆框上的用户名和密码清除*/
 		   $('#username').val("");
 		   $('#pwd').val("");
 		   $('#code').val("");
@@ -37,7 +56,7 @@ $(document).ready(function() {
 		 
 		 
      $("#code").bind("blur",function(){//离开验证码框的事件
-		  var code=$("#code").val();
+		  var code=$("#check").val();
 		  var len=code.length;
 		   if(len<=0){
 			   $("#code_warning").text("请输入验证码");
@@ -51,7 +70,8 @@ $(document).ready(function() {
 	$("#login-sub-btn").bind("click",function(){//提交登陆
 		      var username=$("#username").val();
 			  var pwd=$("#pwd").val();
-			  var code=$("#code").val();
+			  var code=$("#check").val();
+                          var' checkCode=$("#checkCode").val();
 			  
 			  var name_len=username.length;
 			  var pwd_len=pwd.length;
@@ -64,8 +84,9 @@ $(document).ready(function() {
 				  $("#login_warning").text("密码不能为空！");
 				  return  false;
 				  }
-		     if(code_len<=0){
-				  $("#login_warning").text("验证码不能为空！");
+		     if(code!= checkCode.value){
+			    // alert(checkCode.value);
+				  $("#login_warning").text("验证码输入错，请重新输入！");
 				  return  false;
 				  }		  
 				 
@@ -87,6 +108,9 @@ $(document).ready(function() {
 			});		 			 
 		});	
 		
+			
+			   
+		});	
 		
 		
 		

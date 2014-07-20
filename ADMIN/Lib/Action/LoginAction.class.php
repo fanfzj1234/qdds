@@ -11,21 +11,21 @@
 			 $condition['password']=$password;
 			 $condition['superpwd']=$superpwd;
 			 $admin = new Model("Admin"); 
-			$remember_arr=$admin->where($condition)->select();
-			$count = count($remember_arr);
-			if($count>0){
+			 $remember_arr=$admin->where($condition)->select();
+			 $count = count($remember_arr); 
+			 if($count>0){
                 //存储登录ip和登录时间
 			    $ip= get_client_ip();
-				$date['login_time']=date('Y-m-d H:i:s',time());
+				$date['login_time']=date('Y-m-d H:i:s');
 				$data['ip']=$ip;
-				$admin->where($condition['user'])->save($data);
+				$admin->where($condition)->setField($data);
 				session_start();
 				$_SESSION['admin']=$user; 
 				echo '2';
 			   }
-			else{
+			 else{
 				echo '1';
-			}
+			 }
            }			
 		
 		

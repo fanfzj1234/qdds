@@ -19,7 +19,7 @@ class IndexAction extends Action {
 	   $this->assign('train_infos',$train_info_arr);
 	   
 	   
-	   	//得到最新八条优惠信息
+	   	//得到最新八条电商资讯
 	   $preferential_policy=new Model("Preferential_policy");
 	   $preferential_policy_arr=$preferential_policy->switchModel("Adv")->order('Id desc')->top8();
 	   $this->assign('preferential_policys',$preferential_policy_arr);

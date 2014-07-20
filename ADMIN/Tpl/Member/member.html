@@ -1,22 +1,24 @@
 
 <link href="__CSS__/admin_member.css" rel="stylesheet" type="text/css" />
+<link href="__CSS__/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="__JS__/jquery.js"></script>
 <script type="text/javascript" src="__JS__/admin_member.js"></script>
+<script type="text/javascript" src="__ckeditor__/ckeditor.js"></script>
 <script>
 $(document).ready(function()
 {
-	$("#member_look").click(function(){
-		$("#main").load("__APP__/Member/member_ck");
+	$(".member_look").click(function(){
+		var user_number=$(this).parent("td").parent("tr").children("td:eq(0)").text();
+		//alert(user_number);
+		$("#main").load("__APP__/Member/member_ck/Id/"+user_number);
 	});
-	$("#club_activity").click(function(){
-		$("#main").load("__APP__/Activity/sthd");
-	});		
 });
 </script>
 </head>
 <body style="background-color:#E0F0FE">
 
-<div class="admin_main_nr_dbox">
+<div class="tab-container">
+	<div class="tab_content">
  <div class="pagetit">
  <div class="ptit">个人用户管理</div>
   <div class="clear"></div>
@@ -34,41 +36,30 @@ $(document).ready(function()
      <td  align="center" width="5%" class="admin_list_tit" >操作</td>
     </tr>
   
-	<div id="content_left" class="span6">
+	<div id="content" class="span6">
      <foreach name="list" item="list">
        <tr>
-          <td align="center" >{$list.id}</td>
-          <td align="center" >{$list.username}</td>
-          <td align="center" >{$list.email}</td>
-          <td align="center" >{$list.phone}</td>
-          <td align="center" >{$list.register_time}</td>
-          <td align="center" >{$list.login_time}</td>
-          <td align="center" >{$list.login_ip}</td>
-          <td align="center" ><a id="member_look"><strong style="color:#006">查看</strong></a></td>
+          <td align="center" class="user_id">{$list.id}</td>
+          <td align="center" class="user_username">{$list.username}</td>
+          <td align="center" class="user_email">{$list.email}</td>
+          <td align="center" class="user_phone">{$list.phone}</td>
+          <td align="center" class="user_reguster_time">{$list.register_time}</td>
+          <td align="center" class="user_login_time">{$list.login_time}</td>
+          <td align="center" class="user_login_ip">{$list.login_ip}</td>
+          <td align="center" ><a class="member_look"><strong style="color:#006">查看</strong></a></td>
       </tr>
      </foreach> 
     </div>
      </table>
     </div>  
       <div class="clear"></div>
-      <div class="clear"></div>
-	<table width="100%" border="0" cellspacing="10" cellpadding="0" class="admin_list_btm">
-      <tr>
-        <td>
-    
-        <div class="page link_bk" style="margin-right:30px;" align="center">
-         <div id="last_page">
-         <a id="prev">&larr; Last</a>
-         </div>
-         <div id="next_page">
-          <a  id="next">Next &rarr;</a>
-         </div>
-          <div id="page_page">
-        <a><span id="page_id">1</span></a>
-        <input type="hidden" id="page_count" value="<?php echo ($count/16); ?>">
-        </div>
-    </div>
-		</td>
-      </tr></table>
+        <div id="page">
+        	<div id="page_page">{$count}{$page.header}</div>
+        	<div id="prev_page">{$page.prev}</div>
+        	<div id="next_page">{$page.next}</div>
+        	<div id="first_page">{$page.first}</div>
+        	<div id="last_page">{$page.last}</div>
+       </div>
   <div class="clear"></div>
-   </div>
+	</div>
+</div>

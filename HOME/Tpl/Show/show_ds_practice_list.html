@@ -3,13 +3,12 @@
 
 <link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
 <div class="container">
-  <a href="__APP__">首页</a>>>创业培训列表
-  <div id="info_list_main">
+<a href="__APP__">首页</a>>>电子商务实践
+<div id="info_list_main">
     <?php
      $count = count($ds_practices);
      if($count){
      ?>
-    <ul>
     <ul>
       <foreach name="ds_practices" item="ds_practice"> 
       <li><a href="__APP__/Show/show_ds_practice?Id={$ds_practice.id}">{$ds_practice.theme}</a>  

@@ -115,14 +115,14 @@ $(document).ready(function()
 });
 </script>
 <link rel="stylesheet" type="text/css" href="__CSS__/admin_index.css"/>
-
+<link rel="stylesheet" type="text/css" href="__CSS__/bass.css"/>
 <title>DZSW后台管理平台</title>
 
 </head>
 <body>
 <div id="container">
 <div id="left">
-<div class="logo" style=" height:100px"><img src="__IMG__/qddshh.jpg" style="width:100px; height:100px; margin-left:30px;" /></div>
+<div class="logo" style=" height:150px"><img src="__IMG__/qddshh.jpg" style="width:100px; height:100px; margin-left:30px;" /></div>
 <div class="arrowlistmenu">
   <h3 class="menuheader expandable" id="sy">首页</h3>
   <ul class="categoryitems">

@@ -5,12 +5,11 @@
 <script>
 $(document).ready(function()
 {
-	$("#member_look").click(function(){
-		$("#main").load("__APP__/Member/member_ck");
+	$(".member_look").click(function(){
+		var user_number=$(this).parent("td").parent("tr").children("td:eq(0)").text();
+		//alert(user_number);
+		$("#main").load("__APP__/Member/member_ck/Id/"+user_number);
 	});
-	$("#club_activity").click(function(){
-		$("#main").load("__APP__/Activity/sthd");
-	});		
 });
 </script>
 </head>
@@ -36,37 +35,29 @@ $(document).ready(function()
   
 	<div id="content_left" class="span6">
      <?php if(is_array($list)): foreach($list as $key=>$list): ?><tr>
-          <td align="center" ><?php echo ($list["id"]); ?></td>
-          <td align="center" ><?php echo ($list["username"]); ?></td>
-          <td align="center" ><?php echo ($list["email"]); ?></td>
-          <td align="center" ><?php echo ($list["phone"]); ?></td>
-          <td align="center" ><?php echo ($list["register_time"]); ?></td>
-          <td align="center" ><?php echo ($list["login_time"]); ?></td>
-          <td align="center" ><?php echo ($list["login_ip"]); ?></td>
-          <td align="center" ><a id="member_look"><strong style="color:#006">查看</strong></a></td>
+          <td align="center" class="user_id"><?php echo ($list["id"]); ?></td>
+          <td align="center" class="user_username"><?php echo ($list["username"]); ?></td>
+          <td align="center" class="user_email"><?php echo ($list["email"]); ?></td>
+          <td align="center" class="user_phone"><?php echo ($list["phone"]); ?></td>
+          <td align="center" class="user_reguster_time"><?php echo ($list["register_time"]); ?></td>
+          <td align="center" class="user_login_time"><?php echo ($list["login_time"]); ?></td>
+          <td align="center" class="user_login_ip"><?php echo ($list["login_ip"]); ?></td>
+          <td align="center" ><a class="member_look"><strong style="color:#006">查看</strong></a></td>
       </tr><?php endforeach; endif; ?> 
     </div>
      </table>
     </div>  
       <div class="clear"></div>
-      <div class="clear"></div>
-	<table width="100%" border="0" cellspacing="10" cellpadding="0" class="admin_list_btm">
-      <tr>
-        <td>
-    
-        <div class="page link_bk" style="margin-right:30px;" align="center">
-         <div id="last_page">
-         <a id="prev">&larr; Last</a>
+        <div id="container">
+         <div id="last_page" align="right">
+           <a id="prev">&larr;&larr; Last</a>
          </div>
-         <div id="next_page">
-          <a  id="next">Next &rarr;</a>
+         <div id="next_page" align="left">
+          <a  id="next">Next &rarr;&rarr;</a>
          </div>
-          <div id="page_page">
-        <a><span id="page_id">1</span></a>
-        <input type="hidden" id="page_count" value="<?php echo ($count/16); ?>">
-        </div>
-    </div>
-		</td>
-      </tr></table>
+          <div id="page_page" align="left">
+            <a><span id="page_id">1/<?php echo ($count/25);?><strong style="color: #000000"><?php echo "(共有".$count."条数据)";?></strong></span></a>
+            <input type="hidden" id="page_count" value="<?php echo ($count/25); ?>">
+           </div>
+       </div>
   <div class="clear"></div>
-   </div>

@@ -1,18 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-body {
-	margin: 0px;
-	background-color: #F5F9FE;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #000066;
-	height: 100%
-}
-input {font-family:Arial, Helvetica, sans-serif;vertical-align:middle; font-size:12px;}
-form,p,h1,h2,h3,h4,li,ul{ margin:0px; padding:0px;}
+
 .pagetit{ padding-top:7px; padding-bottom:15px; padding-left:3px;}
 .pagetit .ptit{
-	font-size:18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #060;
 	width: auto;
@@ -20,16 +11,8 @@ form,p,h1,h2,h3,h4,li,ul{ margin:0px; padding:0px;}
 	margin-right: 26px;
 	line-height: 25px;
 	padding-left: 6px;
-	display:-moz-box;  display:-webkit-box;
 }
-#last_page {width:200px;padding:26px;} 
-#next_page { -moz-box-flex:1; -webkit-box-flex:1;padding:26px; }
-#page_page {width:200px;padding:26px;} 
-#next_page,#page_page,#last_page {
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-}
-.page {text-align:center;}
+.page {text-align:center; margin-top:25px; margin-bottom:30px;}
 .page a {border: 1px solid #dddddd;display:block;height:23px; line-height:23px; margin-right:5px; float:left;padding-left:6px; padding-right:6px; width:auto; }
 .page a:hover { border:1px #0066CC solid; color: #0066CC; background-color:#FFFFFF}
 .page a.select{ border: 1px solid #0066CC; background-color:#0066CC; color:#ffffff;}
@@ -93,7 +76,7 @@ display:inherit;}
 .admin_list{ border-bottom:1px  #CAE0F4  solid; color:#666666; height:34px; overflow:hidden;white-space: nowrap;}
 .admin_list .pointer{ margin-top:1px; cursor:pointer}
 .admin_list_first{ padding-left:12px;}
-.admin_list_btm{ background-color:#F0F8FD; border-top:1px #F0F8FD solid; border-bottom:1px #F0F8FD solid; border-top:0px;}
+.admin_list_btm{ background-color:#F0F8FD; border-top:1px #CAE0F4 solid; border-bottom:1px #CAE0F4 solid; border-top:0px;}
 .admin_list_no_info {width:100%; height:35px; line-height:35px;border-bottom:1px #CAE0F4 solid; text-indent:2em}
 .admintable { padding-left:15px;}
 .admintable .tit{ }
@@ -192,24 +175,19 @@ filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Colo
 #form1 .link_lan tr td #user_look {
 	color: #003300;
 }
-#show_gl{
-	background:#FFF;
-	}
-
-#gl_zan{
-	cursor:pointer;
-	}
-#gl_hd_ul{
-	height:10px;
-	}	
-#gl_hd_ul li{
-	display: inline;
-	margin-left:10px;
-	}	
-a {
-	 cursor:pointer ;
-     color: #0088cc;
-     text-decoration: none;
+#last_page{ width:260px; padding: 26px;}
+#first_page{ width:260px; padding: 26px;}
+#prev_page{width:260px; padding: 26px;} 
+#next_page{-moz-box-flex: 1;-webkit-box-flex: 1;padding: 26px}
+#page_page{width:260px;padding: 26px;}
+#page{
+	display: -moz-box;
+	display: -webkit-box;
 }
+#prev_page,#next_page,#page_page,#page,#last_page,#first_page{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing: border-box; 
+}
+
 
 

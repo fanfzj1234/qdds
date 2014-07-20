@@ -8,10 +8,15 @@
 .arrowlistmenu ul li a { color:#A70303; background: url(../images/arrowbullet.png) no-repeat center left; /*custom bullet list image*/ display: block; padding: 2px 0; padding-left: 19px; /*link text is indented 19px*/ text-decoration: none; font-weight: bold; border-bottom: 1px solid #dadada; font-size: 90%; cursor:pointer ;}
 .arrowlistmenu ul li a:visited { color:#0000FF; }
 .arrowlistmenu ul li a:hover { /*hover state CSS*/ color:#00F ; background-color: #F3F3F3; }
-#container{ display:-moz-box;  display:-webkit-box;}
-#left {width:200px;padding:26px;} 
-#main { -moz-box-flex:1; -webkit-box-flex:1;padding:26px; }
-#left,#main{
-	-moz-box-sizing:border-box;
-	-webkit-box-sizing:border-box;
+#left {width:220px; padding-left: 26px;} 
+#main {-moz-box-flex: 1;-webkit-box-flex: 1;padding: 2px}
+#right {width:260px; padding: 26px;} 
+#container{
+	display: -moz-box;
+	display: -webkit-box
 }
+#left,#main,#container，#right{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing: border-box; 
+}
+

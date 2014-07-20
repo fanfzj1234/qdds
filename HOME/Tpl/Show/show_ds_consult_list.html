@@ -3,26 +3,26 @@
 
 <link rel="stylesheet" href="__CSS__/show.css" type="text/css" />
 <div class="container">
-  <a href="__APP__">首页</a>>>优惠政策列表
-  <div id="info_list_main">
-   <?php
-     $count = count($club_activities);
+<a href="__APP__">首页</a>>>电商资讯
+<div id="info_list_main">
+<?php
+     $count = count($ds_consults);
      if($count){
      ?>
-    <ul>
-      <foreach name="ds_consults" item="ds_consult"> 
-      <li><a href="__APP__/Show/show_ds_consult?Id={$ds_consult.Id}">{$ds_consult.name}</a>  
-      <span style="float:right">{$ds_consult.fb_time}</span>
-      </li>
-     <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" width="100%" color=#987cb9 SIZE=3>
+<ul>
+    <foreach name="ds_consults" item="ds_consult"> 
+    <li><a href="__APP__/Show/show_ds_consult?Id={$ds_consult.Id}">{$ds_consult.name}</a>  
+    <span>{$ds_consult.fb_time}</span>
+    </li>
+ <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=1)" color=#987cb9 SIZE=3>
       </foreach>
-    </ul>
-     <?php
-     } else{
-       echo "没有找到相关内容";
-      }
-     ?>
-  </div>
+</ul>
+   <?php
+   } else{
+   echo "没有找到相关内容";
+   }
+   ?>
+</div>
 </div>
 
 <include file="Public:footer" />

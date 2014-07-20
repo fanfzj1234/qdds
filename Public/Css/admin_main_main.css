@@ -8,9 +8,9 @@ body {
 	font: bold 11px Arial;
 }
 
-.pagetit{ padding-top:6px; padding-bottom:15px; padding-left:3px;}
+.pagetit{ padding-top:6px; padding-bottom:15px; padding-left:30px;}
 .pagetit .ptit{
-	font-size: 18px;
+	font-size: 13px;
 	font-weight: bold;
 	color: #060;
 	width: auto;
@@ -20,7 +20,7 @@ body {
 	padding-left: 6px;
 }
 .clear{clear:both;}
-.admin_main_nr_dbox {border:1px #95AADB solid;background-color:#FFFFFF; margin-left:5px; margin-right:5px; padding:10px;}
+.admin_main_nr_dbox {border:1px #95AADB solid;background-color:#FFFFFF; margin-left:5px; margin-right:5px; padding:10px;margin-top:5px;}
 /*-----Frameset全屏--------*/
 .admin_frameset{ position:absolute; left:0px; top:0px;width:26px; height:26px;}
 .admin_frameset .open_frame{background:url(../images/open_frame.gif) no-repeat; cursor:pointer;width:26px; height:26px;}
@@ -32,4 +32,4 @@ body {
 .toptip{line-height:180%; font-size:11px;}
 .toptip h2{padding-left:20px; display:block;color: #000000;   font-size:12px; margin-bottom:8px;border-bottom:1px  #DFEDF7 solid;border-top:1px #DFEDF7 solid; background-color:#F0F8FD; height:30px; line-height:30px; margin-bottom:8px; font-weight:100}
 .toptip p{ color:#666666; padding-bottom:10px;padding-left:20px;}
-.toptit{line-height:180%;padding-left:20px;border-bottom:1px  #DFEDF7 solid;border-top:1px #DFEDF7 solid; background-color:#F0F8FD; height:30px; line-height:30px; margin-bottom:8px; font-size:11px;}
+.toptit{line-height:180%;padding-left:20px;margin-left: 10px;border-bottom:1px  #DFEDF7 solid;border-top:1px #DFEDF7 solid; background-color:#F0F8FD; height:30px; line-height:30px; margin-bottom:8px; font-size:11px;}
